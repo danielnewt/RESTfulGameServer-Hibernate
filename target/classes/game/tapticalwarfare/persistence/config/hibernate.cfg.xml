@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/gameDev?serverTimezone=EST</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">rootpass</property>
+
+		<!-- Set the database dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- "create" to Drop and re-create the database schema on startup -->
+		<!-- Change to "update" to stop destruction of DB on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Name the annotated Entity classes -->
+		<mapping class="game.tapticalwarfare.persistence.beans.Profile" />
+		<mapping class="game.tapticalwarfare.persistence.beans.Game" />
+
+	</session-factory>
+</hibernate-configuration>
